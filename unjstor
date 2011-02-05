@@ -1,0 +1,7 @@
+#! /bin/sh
+pdftk "$1" cat 2-end output /tmp/new.pdf
+if [ "$?" -ne "0" ]; then
+  echo "pdftk error"
+  exit 1
+fi
+mv /tmp/new.pdf "$1"
