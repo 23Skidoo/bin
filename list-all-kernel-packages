@@ -1,0 +1,3 @@
+#! /bin/sh
+
+aptitude search "$1" | grep "^i" | awk 'BEGIN { ORS=" " } { print $2 } END { ORS="\n"; print "" }'
