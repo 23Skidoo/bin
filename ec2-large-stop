@@ -1,0 +1,5 @@
+#! /bin/sh
+
+INSTANCE_ID=i-a2dd89d4
+
+ec2-stop-instances ${INSTANCE_ID}

@@ -1,0 +1,23 @@
+#! /bin/sh
+
+INSTANCE_ID=i-a2dd89d4
+
+ec2-start-instances ${INSTANCE_ID}
+
+echo -n waiting for instance startup...
+while true; do
+    instance=`ec2-describe-instances | grep "${INSTANCE_ID}.*running"`
+    if [ "$instance" != "" ]; then break; fi
+    sleep 1
+    echo -n .
+done
+
+EC2_HOST=`echo $instance|awk '{print $4}'`
+echo ${EC2_HOST}
+
+cp ~/.ssh/config ~/.ssh/config.old
+sed <~/.ssh/config >~/.ssh/config.new "s|HostName ec2.*amazonaws.com|HostName ${EC2_HOST}|"
+mv ~/.ssh/config.new ~/.ssh/config
+chmod 600 ~/.ssh/config
+
+echo "to log in:              ssh ec2-large"

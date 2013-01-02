@@ -1,0 +1,4 @@
+#! /bin/sh
+
+ec2-start-instances i-968d83e1
+ec2-associate-address -i i-968d83e1 46.137.122.73
