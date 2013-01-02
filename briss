@@ -1,0 +1,3 @@
+#! /bin/sh
+BRISS_VERSION=0.9
+java -jar $HOME/misc/briss-$BRISS_VERSION/briss-$BRISS_VERSION.jar
