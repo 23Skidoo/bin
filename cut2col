@@ -1,0 +1,3 @@
+#! /bin/sh
+CUT2COL_VERSION=v34c
+java -jar $HOME/misc/cut2col-$CUT2COL_VERSION.jar
