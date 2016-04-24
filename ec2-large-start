@@ -1,6 +1,6 @@
 #! /bin/sh
 
-INSTANCE_ID=i-a2dd89d4
+INSTANCE_ID=i-40f1d50c
 
 ec2-start-instances ${INSTANCE_ID}
 
@@ -20,4 +20,4 @@ sed <~/.ssh/config >~/.ssh/config.new "s|HostName ec2.*amazonaws.com|HostName ${
 mv ~/.ssh/config.new ~/.ssh/config
 chmod 600 ~/.ssh/config
 
-echo "to log in:              ssh ec2-large"
+echo "to log in:              ssh ec2"

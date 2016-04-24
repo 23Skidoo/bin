@@ -1,5 +1,5 @@
 #! /bin/sh
 
-INSTANCE_ID=i-a2dd89d4
+INSTANCE_ID=i-40f1d50c
 
 ec2-stop-instances ${INSTANCE_ID}
