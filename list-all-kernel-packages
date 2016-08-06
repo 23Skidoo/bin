@@ -5,4 +5,4 @@
 # linux-headers-2.6.38-11 linux-headers-2.6.38-11-generic linux-image-2.6.38-11-generic linux-tools-2.6.38-11
 # $ sudo aptitude purge `list-all-kernel-packages 2.6.38-11`
 
-aptitude search -w 120 "$1" | grep "^i" | awk 'BEGIN { ORS=" " } { print $2 } END { ORS="\n"; print "" }'
+aptitude search -w 120 "$1" | grep "^i" | awk 'BEGIN { ORS=" " } { print $3 } END { ORS="\n"; print "" }'
