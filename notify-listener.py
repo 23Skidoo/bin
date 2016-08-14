@@ -18,6 +18,8 @@
 
 import os, sys
 try:
+    import gi
+    gi.require_version('Notify', '0.7')
     from gi.repository import Notify, GObject
 except:
     print >> sys.stderr, 'Could not locate pygobject'
@@ -47,6 +49,7 @@ class IrssiListener:
         n = Notify.Notification.new(subject.encode('utf-8'),
                                     message.encode('utf-8'),
                                     'dialog-information')
+        n.set_urgency(Notify.Urgency.CRITICAL)
         n.show()
 
         # It would be more kosher to do this with GStreamer, but in
